@@ -2,6 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include<string>
 
 using namespace std;
 
@@ -20,7 +21,7 @@ void escolhaAuditorio();
 
 void verificarVidas() {
     if (vidas <= 0) {
-        cout << "Você perdeu todas as suas vidas. Você sente o vírus se espalhando pelo seu corpo e te transformando lentamente, fim de jogo." << endl;
+        cout << nomeplayer << " perdeu todas as suas vidas. Você sente o vírus se espalhando pelo seu corpo e te transformando lentamente, fim de jogo." << endl;
         exit(0);
     }
 }
@@ -30,11 +31,14 @@ int main() {
     setlocale(LC_ALL, "portuguese");
     srand(time(0));
     inicio();
+    string nomeplayer;
     return 0;
+
+    getline(cin>>ws, nomeplayer);
 }
 
 void finalCura() {
-    cout << "Parabéns! Você encontrou a cura para o vírus zumbi e salvou a humanidade. Fim de jogo." << endl;
+    cout << "Parabéns! " << nomeplayer << "Você encontrou a cura para o vírus zumbi e salvou a humanidade. Fim de jogo." << endl;
     exit(0);
 }
 
